@@ -59,35 +59,30 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
      // First Time (pushed back 1 year to make sure it comes before current time)
     var firstTimeConverted = moment(first, "hh:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
+    // console.log(firstTimeConverted);
 
     // Current Time
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+    // console.log("DIFFERENCE IN TIME: " + diffTime);
 
     // Time apart (remainder)
     var tRemainder = diffTime % frequency;
-    console.log(tRemainder);
+    // console.log(tRemainder);
 
     // Minutes Until Next Train
     var minutesAway = frequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + minutesAway);
+    // console.log("MINUTES TILL TRAIN: " + minutesAway);
 
     // Next Train
     var nextArrival = moment().add(minutesAway, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
+    // console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
     var arrivalFormatted = moment(nextArrival).format("hh:mm");
 
 	tableBody.append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + 
 	"</td><td>" + arrivalFormatted + "</td><td>" + minutesAway + "</td></tr>");
   });
-
-$("tr").onmouseover = function() 
-{
-    this.style.backgroundColor = "blue";
-}

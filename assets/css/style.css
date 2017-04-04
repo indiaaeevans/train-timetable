@@ -1,20 +1,20 @@
+/* center the table text */
 th, td {
 	text-align: center;
 }
-
 /* adding a min height so the table takes up some space even before data is added */
 table {
 	min-height: 300px;
 }
-
+/* custom font for the page header */
 h1 {
 	font-family: 'Rubik', sans-serif;
 }
-
-.navbar-header {
-	margin-left: 30px;
+/* change font color when a row is moused over */
+tr:hover{
+	color: #9575cd;
 }
 
-tr:hover{
-	color: #64b5f6;
+h1 > small {
+	color: #b39ddb;
 }
