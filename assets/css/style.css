@@ -1,0 +1,20 @@
+th, td {
+	text-align: center;
+}
+
+/* adding a min height so the table takes up some space even before data is added */
+table {
+	min-height: 300px;
+}
+
+h1 {
+	font-family: 'Rubik', sans-serif;
+}
+
+.navbar-header {
+	margin-left: 30px;
+}
+
+tr:hover{
+	color: #64b5f6;
+}
